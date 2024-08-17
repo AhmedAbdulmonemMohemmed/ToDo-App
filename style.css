@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    /* background:linear-gradient(135deg,#153677,#4e085f); */
+    background: url(./images/pexels-alphaen-21325134.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.todo_app{
+    width: 100%;
+    max-width: 540px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo_app h2{
+    display: flex;
+    color: #001132;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo_app h2 img{
+    width: 30px;
+    margin-left: 5px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #edeef0;
+    padding-left: 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+
+.row input{
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    padding: 10px;
+}
+
+.row button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 40px;
+}
+
+ul li{
+    list-style: none;
+    user-select: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(./images/radio.png);
+    background-position: center;
+    background-size: cover;
+    top: 7px;
+    left: 12px;
+}
+
+ul li.checked::before{
+    background-image: url(./images/checked.png);
+
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    counter-reset: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+ul li span:hover{
+    background: #edeef0;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .row input {
+        padding: 5px;
+    }
+    .todo_app {
+        padding: 30px 20px 50px;
+    }
+    ul li {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 319px) {
+    .row input {
+        padding: 0;
+    }
+    .todo_app {
+        padding: 20px 15px 40px;
+    }
+    ul li {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 667px) {
+    body {
+        font-size: 14px;
+    }
+    .todo_app {
+        padding: 20px;
+    }
+    ul li {
+        padding: 10px -1px 10px 40px;
+    }
+}
+
+
+.row input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    padding: 10px;
+    width: 100%;  /* Ensures the input takes the full width available */
+    font-size: 16px; /* A base font size for readability */
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 667px) {
+    .row input {
+        padding: 8px;
+        font-size: 14px; /* Slightly smaller font size for better fit */
+    }
+
+    .todo_app {
+        padding: 20px 15px 40px;
+    }
+}
+
+/* Additional adjustments for extra small screens */
+@media screen and (max-width: 320px) {
+    .row input {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .todo_app {
+        padding: 15px 10px 30px;
+    }
+}
